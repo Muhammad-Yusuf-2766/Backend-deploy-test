@@ -10,8 +10,9 @@ app.use(cors())
 app.use(express.json())
 
 // Connect to your MongoDB database (replace with your database URL)
+const password = 'Mamadaliev2766'
 mongoose.connect(
-	'mongodb+srv://strangerbellimo:Mamadaliev2766@papay.qzqt3.mongodb.net/Papay'
+	`mongodb+srv://Muhammad-Yusuf:${password}@gss-cluster.lhyyn.mongodb.net/?retryWrites=true&w=majority&appName=GSS-Cluster`
 )
 
 // Check for database connection errors
