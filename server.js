@@ -19,6 +19,14 @@ mongoose
 	.then(() => console.log('MongoDB Atlas connected successfully'))
 	.catch(error => console.error('MongoDB connection error:', error))
 
+// ================= End Points ============== //
+// Get saved tasks from the database
+app.get('/', (req, res) => {
+	res.send(
+		'Assalamu alaykum Muhammad-Yusuf, Welcome to your running on AWS EC2 Server'
+	)
+})
+
 // Get saved tasks from the database
 app.get('/getTodoList', (req, res) => {
 	TodoModel.find({})
