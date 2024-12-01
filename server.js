@@ -10,15 +10,14 @@ app.use(cors())
 app.use(express.json())
 
 // Connect to your MongoDB database (replace with your database URL)
-const password = 'Mamadaliev2766'
-mongoose.connect(
-	`mongodb+srv://Muhammad-Yusuf:${password}@gss-cluster.lhyyn.mongodb.net/?retryWrites=true&w=majority&appName=GSS-Cluster`
-)
+const passwordDb = '2JXEbwnkoMzPp2Cb'
 
-// Check for database connection errors
-mongoose.connection.on('error', error => {
-	console.error('MongoDB connection error:', error)
-})
+mongoose
+	.connect(
+		'mongodb+srv://Muhammad-Yusuf:2JXEbwnkoMzPp2Cb@gss-cluster.lhyyn.mongodb.net/GSS_MERN_PROJECT?retryWrites=true&w=majority'
+	)
+	.then(() => console.log('MongoDB Atlas connected successfully'))
+	.catch(error => console.error('MongoDB connection error:', error))
 
 // Get saved tasks from the database
 app.get('/getTodoList', (req, res) => {
