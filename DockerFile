@@ -1,20 +1,7 @@
-# Node.js image dan foydalanamiz (alpine = yengil vaznli image)
-FROM node:alpine.3.18
-
-# Ishlash uchun katalogni sozlash
+FROM node:alpine3.18
 WORKDIR /app
-
-# package.json va package-lock.json ni konteynerga nusxalash
 COPY package.json ./
-
-# Kerakli node_modules'ni o'rnatish
 RUN npm install
-
-# Loyiha fayllarini konteynerga nusxalash
 COPY . .
-
-# Docker konteyner 3000 portida ishlaydi
 EXPOSE 3001
-
-# Loyihani ishga tushirish
-CMD ["npm", "run", "start"]
+CMD [ "npm", "run", "start" ]
